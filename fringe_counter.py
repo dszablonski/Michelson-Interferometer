@@ -39,7 +39,7 @@ ax2.plot([target_slice, target_slice], [img.shape[0], 0], 'r-')
 
 slc = sobely[:, int(target_slice)]
 slc[slc < 0] = 0
-ax2.set_title("vertical derivative (red line indicating slice taken from image)")
+ax2.set_title("Vertical Derivative")
 
 slc = gaussian_filter1d(slc, sigma=10) # filter the peaks the remove noise,
 # again an arbitrary threshold
@@ -49,4 +49,4 @@ peaks = find_peaks(slc)[0] # [0] returns only locations
 ax3.set_xlabel("Pixels")
 ax3.plot(peaks, slc[peaks], 'ro')
 ax3.set_title('number of fringes: ' + str(len(peaks)))
-plt.show()
+plt.savefig("fringes_counted.png", dpi=800)
