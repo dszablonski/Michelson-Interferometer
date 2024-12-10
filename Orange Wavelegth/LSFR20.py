@@ -40,7 +40,7 @@ SKIP_FIRST_LINE = False
 DELIMITER = ','  # Set to space, ' ', if working with .txt file without commas
 
 # Plotting details
-PLOT_TITLE = r'Distance from perpendicular mirror vs fringes'
+PLOT_TITLE = r'Wavelength of Orange Light'
 X_LABEL = r'$n$'
 Y_LABEL = r'$at$ / nm'
 AUTO_X_LIMITS = True
@@ -56,7 +56,7 @@ MARKER_STYLE = 'x'  # See documentation for options:
 MARKER_COLOUR = 'black'
 GRID_LINES = True
 SAVE_FIGURE = True
-FIGURE_NAME = 'plot1.png'
+FIGURE_NAME = 'plot2.png'
 FIGURE_RESOLUTION = 400  # in dpi
 
 
