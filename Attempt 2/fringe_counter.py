@@ -5,7 +5,7 @@ import cv2
 from scipy.signal import find_peaks
 from scipy.ndimage import gaussian_filter1d
 
-FILE_NAME = 't=15mm.jpg'
+FILE_NAME = 't=12.jpg'
 
 fig = plt.figure(tight_layout=True)
 gs = gridspec.GridSpec(2, 2)
@@ -22,7 +22,7 @@ img = cv2.bitwise_not(img)
 ax1.imshow(img, cmap='gray')
 ax1.set_title("Original image (grayscale)")
 
-img[img < 10] = 0 # apply some arbitrary thresholding (there's
+img[img < 100] = 0 # apply some arbitrary thresholding (there's
 # a bunch of noise in the image
 
 yp, xp = np.where(img != 0)
@@ -30,20 +30,20 @@ yp, xp = np.where(img != 0)
 xmax = max(xp)
 xmin = min(xp)
 
-target_slice = (xmax - xmin) /1.8 + xmin # get the middle of the fringe blob
+target_slice = (xmax - xmin) /1.7 + xmin # get the middle of the fringe blob
 
 sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5) # get the vertical derivative
 
-sobely = cv2.blur(sobely,(5,5)) # make the peaks a little smoother
+sobely = cv2.blur(sobely,(1,1)) # make the peaks a little smoother
 
 ax2.imshow(sobely, cmap='gray') #show the derivative (troughs are very visible)
 ax2.plot([target_slice, target_slice], [img.shape[0], 0], 'r-')
 
 slc = sobely[:, int(target_slice)]
 slc[slc < 0] = 0
-ax2.set_title("Vertical Derivative1")
+ax2.set_title("Vertical Derivative")
 
-slc = gaussian_filter1d(slc, sigma=3.5) # filter the peaks the remove noise,
+slc = gaussian_filter1d(slc, sigma=2) # filter the peaks the remove noise,
 # again an arbitrary threshold
 
 ax3.plot(slc) 
@@ -51,4 +51,4 @@ peaks = find_peaks(slc)[0] # [0] returns only locations
 ax3.set_xlabel("Pixels")
 ax3.plot(peaks, slc[peaks], 'ro')
 ax3.set_title('number of fringes at t = 12mm: ' + str(len(peaks)))
-plt.savefig("t=15mm.png", dpi=800)
+plt.savefig("t=12mm.png", dpi=800)
