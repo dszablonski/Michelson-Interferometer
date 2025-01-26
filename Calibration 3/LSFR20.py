@@ -40,7 +40,7 @@ SKIP_FIRST_LINE = False
 DELIMITER = ','  # Set to space, ' ', if working with .txt file without commas
 
 # Plotting details
-PLOT_TITLE = r'Calibration data for $\lambda = 546.1$nm Attempt 3 Set 2'
+PLOT_TITLE = r'Calibration for $\lambda = 546.1$nm Data Set 1'
 X_LABEL = r'$n\lambda$ / m'
 Y_LABEL = r't / m'
 AUTO_X_LIMITS = True
@@ -56,7 +56,7 @@ MARKER_STYLE = 'x'  # See documentation for options:
 MARKER_COLOUR = 'black'
 GRID_LINES = True
 SAVE_FIGURE = True
-FIGURE_NAME = 'calibration 2.png'
+FIGURE_NAME = 'calibration 1.png'
 FIGURE_RESOLUTION = 400  # in dpi
 
 

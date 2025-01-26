@@ -40,9 +40,9 @@ SKIP_FIRST_LINE = False
 DELIMITER = ','  # Set to space, ' ', if working with .txt file without commas
 
 # Plotting details
-PLOT_TITLE = r'Wavelength of Orange Light'
+PLOT_TITLE = r'Wavelength of Orange Light - Data Set 2'
 X_LABEL = r'$n$'
-Y_LABEL = r'$at$ / nm'
+Y_LABEL = r'$at$ / m'
 AUTO_X_LIMITS = True
 X_LIMITS = [0., 10.]  # Not used unless AUTO_X_LIMITS = False
 AUTO_Y_LIMITS = True

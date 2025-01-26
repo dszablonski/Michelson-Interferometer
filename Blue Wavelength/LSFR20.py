@@ -40,9 +40,9 @@ SKIP_FIRST_LINE = False
 DELIMITER = ','  # Set to space, ' ', if working with .txt file without commas
 
 # Plotting details
-PLOT_TITLE = r'Wavelength of Blue Light'
+PLOT_TITLE = r'Wavelength of Blue Light - Data Set 1'
 X_LABEL = r'$n$'
-Y_LABEL = r'$at$ / nm'
+Y_LABEL = r'$at$ / m'
 AUTO_X_LIMITS = True
 X_LIMITS = [0., 10.]  # Not used unless AUTO_X_LIMITS = False
 AUTO_Y_LIMITS = True
@@ -57,7 +57,7 @@ MARKER_COLOUR = 'black'
 GRID_LINES = True
 SAVE_FIGURE = True
 FIGURE_NAME = 'plot1.png'
-FIGURE_RESOLUTION = 400  # in dpi
+FIGURE_RESOLUTION = 800  # in dpi
 
 
 def linear_function(x_variable, parameters):
